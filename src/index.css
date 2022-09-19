@@ -7,7 +7,102 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.notes-table {
+  align-items: center;
+  display: grid;
+  grid-gap: 15px 0;
+  grid-template-columns: auto repeat(5, 1fr) repeat(3, 30px);
+  text-transform: capitalize;
+}
+
+.notes-table .title,
+.notes-table .table-content {
+  /* border: 1px solid rgb(107, 107, 107); */
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.notes-table .title {
+  background-color: rgb(107, 107, 107);
+  color: #ffffff;
+}
+
+.notes-table .title.edit,
+.notes-table .title.archive,
+.notes-table .title.delete {
+  font-size: 0;
+}
+
+.notes-table .table-content {
+  background-color: rgb(116, 216, 183);
+}
+
+.notes-table .table-content.content {
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notes-table .table-content.category-ico::before {
+  align-items: center;
+  background-color: rgb(107, 107, 107);
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  content: '';
+  display: flex;
+  justify-content: center;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  height: 35px;
+  width: 35px
+} 
+
+.notes-table .table-content.task::before{
+  content: '\f07a';
+}
+
+.notes-table .table-content.random::before{
+  content: '\f86d';
+}
+
+.notes-table .table-content.idea::before{
+  content: '\f0eb';
+}
+
+.notes-table .table-content.quote::before{
+  content: '\f10d';
+} 
+
+.notes-table .table-content.edit::before,
+.notes-table .table-content.archive::before,
+.notes-table .table-content.delete::before{
+  align-items: center;
+  color: rgb(107, 107, 107);
+  content: '';
+  display: flex;
+  justify-content: center;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  height: 35px;
+  width: 35px
+}
+
+.notes-table .table-content.edit::before{
+  content: '\f044';
+}
+
+.notes-table .table-content.archive::before{
+  content: '\f1c6';
+}
+
+.notes-table .table-content.delete::before {
+  content: '\f1f8';
 }
